@@ -32,7 +32,6 @@ keystone.init({
 	}).engine,
 
 	'emails': 'templates/emails',
-	
 	'auto update': true,
 	'session': true,
 	'auth': true,
