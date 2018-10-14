@@ -43,7 +43,7 @@ exports = module.exports = function(app) {
 	// Views
 	
 	app.get("/:lang/", routes.views.index);
-	app.get("/", routes.views.index);
+
 	app.all("/contact", routes.views.contact);
 
 	app.get("/:lang/:categorie", routes.views.categorie);
