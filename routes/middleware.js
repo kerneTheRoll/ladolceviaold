@@ -76,7 +76,7 @@ exports.detectLang = function(req, res, next) {
 		res.cookie('i18n',"it" );
 		
 		var language = (req.cookies['i18n'] ) ? req.cookies['i18n'] : 'it' ;
-
+		res.redirect('/'+language+'/');
 		
 	
 	
