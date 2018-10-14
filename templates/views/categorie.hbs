@@ -1,0 +1,149 @@
+
+		
+	
+    <a class="" style='color:red' href="/it">italiano</a>
+  
+<div class="container-fluid" style="margin:0;padding:0;margin-top:-20px;border-radius:0px">
+	{{#each categ}}
+	<div class="jumbotron immagineCategoria">
+
+		<h2 class='hero-title'>{{__ categoria}}</h2>
+
+		{{/each}}
+	</div>
+
+	</div>
+	<div class='container'>
+		<hr />
+	</div>
+	{{#each categ}}
+	<style>
+		.immagineCategoria {
+				background-image:url({{cloudinaryUrl foto min-width='1200px'   }});background-repeat:no-repeat;background-size:cover;height:70vh;background-position:center
+			}
+
+			.hero-title {
+				color: red;
+			}
+	
+
+
+
+		.hero-title {
+			color: red;
+		}
+		@media only screen and (max-width: 600px) {
+			.immagineCategoria {
+				background-image:url({{cloudinaryUrl foto  width='600' height='400' }});background-repeat:no-repeat;background-size:cover;height:70vh;background-position:center
+			}
+
+			.hero-title {
+				color: red;
+			}
+		}
+
+
+			
+	</style>
+	{{/each}}
+
+	<style>
+		@font-face {
+			font-family: 'YourFontName';
+			/*a name to be used later*/
+			src: url('./fonts/Alperton-Regular.ttf');
+			/*URL to font*/
+		}
+
+		.col-back {
+			background-image: url('./images/HOME3.jpg');
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			height: 700px;
+
+		}
+
+		.col-front {
+
+			height: 700px;
+
+		}
+
+
+		.hero-title {
+			font-family: 'YourFontName';
+			color: #003b7f;
+			font-size: 6rem;
+
+		}
+
+		.title-storia {
+			font-family: 'YourFontName';
+			color: #fff;
+			font-size: 6rem;
+		}
+
+		.text-blu {
+			color: #003b7f;
+		}
+
+
+
+
+		.mylist {
+			text-align: center;
+		}
+
+		.mylist li a::after {
+			content: " |";
+			padding: 5px;
+			color: #9bdeff;
+		}
+
+		.text-blu-light {
+			color: #43b2e7;
+			margin-bottom: 60px;
+		}
+
+		.bg-blue-light {
+			background: #0db8fe;
+		}
+
+		.text-grey {
+			color: #d1d1cd;
+		}
+
+		a.text-grey {
+			font-size: 1.4em;
+		}
+
+		a.text-grey:hover,
+		a.text-grey:visited {
+			text-decoration: none;
+
+		}
+
+		.flex-middle {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+			background: #f7f8fa;
+		}
+
+		.text-uppercase {
+			text-transform: uppercase;
+		}
+
+		.text-center {
+			text-align: center;
+		}
+
+		.jumbotron {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	</style>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ladolcevia</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+	{{!-- This file provides the default styling for the KeystoneJS Content Editor
+	- only renders when user is logged in and admin--}}
+	{{{isAdminEditorCSS user}}}
+
+	{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+	//- Safely remove this block if you are not targeting IE8 --}}
+	<!--[if lt IE 9]>
+			<script src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
+			<script src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	<style>
+		
+		@font-face {
+			font-family: 'YourFontName';
+			/*a name to be used later*/
+			src: url('../fonts/Alperton-Regular.ttf');
+			/*URL to font*/
+		}
+
+		@font-face {
+			font-family: 'FontMenu';
+			/*a name to be used later*/
+			src: url('../fonts/CaviarDreams.ttf');
+			/*URL to font*/
+		}
+
+		#mynav{
+			background: #003b7f;
+			border-bottom:7px solid #43b2e7;
+			margin-bottom:20px;
+			text-transform: uppercase;
+			
+
+		}
+		body{
+			font-family: 'FontMenu';
+			
+			
+		}
+
+		
+		.nav li a {
+			font-size: 1.4em;
+			font-weight: bold;
+		}
+		.header-logo{
+			height:95px;
+			display:flex;
+			background:#e5e5e5;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			
+
+		}
+		.header-logo img{
+			max-width: 250px;
+			height: 75px;
+		}
+		.navbar-toggler{
+			border:0;
+			color:#1d1d1d;
+			background:inherit;
+		}
+
+	/* Large desktop */
+@media (min-width: 1200px) { 
+
+
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {  }
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {  }
+
+/* Landscape phones and down */
+@media (max-width: 480px) { }
+
+
+
+
+	</style>
+
+
+</head>
+
+<body>
+	<div class='header-logo'>
+		<img src='/../images/logo.png' class='img-responsive' />
+	</div>
+	<nav class="navbar navbar-expand-lg navbar-dark" id='mynav'>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+		 aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="nav navbar-nav navbar-center mx-auto">
+				{{# each navLinks}}
+				<li {{#ifeq ../section key}} class="active" {{else}} {{/ifeq}}>
+					<a class='nav-link' href="{{ href }}">{{ label }}</a>
+				</li>
+
+				{{/each}}
+				<li>
+					<a href='#' class='nav-link'>Azienda</a>
+				</li>
+				<li>
+					<a href='#' class='nav-link'>Prodotti</a>
+				</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right ">
+		<li class=''>
+				<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type='button' id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" style='background:#003b7f'>
+    scegli la lingua
+  </button>
+  <div class="dropdown-menu"  style='background:#003b7f;text-transform:lowercase;border-bottom:6px solid #43b2e7;'>
+	
+    <a class="dropdown-item" style='color:#fff' href="/it/{{currentUrl}}">italiano</a>
+    <a class="dropdown-item"  style='color:#fff' href="/de/{{currentUrl}}">Tedesco</a>
+    <a class="dropdown-item" style='color:#fff'  href="/en/{{currentUrl}}">Inglese</a>
+  </div>
+</div>
+		</li>
+			</ul>
+		</div>
+	</nav>
+
+
+
+	<div id="body">
+		<!--
+				Flash messages allow you to display once-off status messages to users, e.g. form
+				validation errors, success messages, etc
+			-->
+		{{#if messages}}
+		<div id="flash-messages" class="container">
+			{{#if messages.info}}
+			<div class="alert alert-info">
+				{{{flashMessages messages.info}}}
+			</div>
+			{{/if}}
+			{{#if messages.success}}
+			<div class="alert alert-success">
+				{{{flashMessages messages.success}}}
+			</div>
+			{{/if}}
+			{{#if messages.warning}}
+			<div class="alert alert-warning">
+				{{{flashMessages messages.warning}}}
+			</div>
+			{{/if}}
+			{{#if messages.error}}
+			<div class="alert alert-danger">
+				{{{flashMessages messages.error}}}
+			</div>
+			{{/if}}
+		</div>
+		{{/if}}
+		<!-- The content block should contain the body of your template's content-->
+		{{{body}}}
+	</div>
+	<div class="container">
+		<div id="footer">
+
+		</div>
+	</div>
+	{{!--
+	//- jQuery 1.11.3 is included by default, and required by both Bootstrap
+	//- and the KeystoneJS Content Editor. If you are not targeting IE8,
+	//- you can upgrade to 2.1.4 (also bundled) for better performance.
+	--}}
+	<script src="/js/jquery/jquery-1.11.3.min.js"></script>
+	{{!--
+	//- Customise which Bootstrap javascript files are served by including
+	//- them specifically here, instead of bootstrap-3.3.5.min.js
+	--}}
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+	{{{isAdminEditorJS user}}}
+</body>
+
+</html>
