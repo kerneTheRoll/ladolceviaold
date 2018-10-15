@@ -26,10 +26,10 @@ var importRoutes = keystone.importer(__dirname);
 // Common Middleware
 
 keystone.pre('routes', i18n.init);
-
+keystone.pre('routes', middleware.detectLang);
 keystone.pre("routes", middleware.initLocals);
 keystone.pre("render", middleware.flashMessages);
-keystone.pre('routes', middleware.detectLang);
+
 //keystone.pre('routes', middleware.detectLang);
 // Import Route Controllers
 var routes = {
