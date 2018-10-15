@@ -1,9 +1,9 @@
 
 		
 	
-    <a class="" style='color:red' href="/it">italiano</a>
+    
   
-<div class="container-fluid" style="margin:0;padding:0;margin-top:-20px;border-radius:0px">
+<div class="container-fluid">
 	{{#each categ}}
 	<div class="jumbotron immagineCategoria">
 
@@ -19,7 +19,7 @@
 	{{#each categ}}
 	<style>
 		.immagineCategoria {
-				background-image:url({{cloudinaryUrl foto min-width='1200px'   }});background-repeat:no-repeat;background-size:cover;height:70vh;background-position:center
+				background-image:url({{cloudinaryUrl foto width="1300"   }});background-repeat:no-repeat;background-size:cover;height:80vh;background-position:center
 			}
 
 			.hero-title {
@@ -34,7 +34,7 @@
 		}
 		@media only screen and (max-width: 600px) {
 			.immagineCategoria {
-				background-image:url({{cloudinaryUrl foto  width='600' height='400' }});background-repeat:no-repeat;background-size:cover;height:70vh;background-position:center
+				background-image:url({{cloudinaryUrl foto  width='500' height='600' }});background-repeat:no-repeat;background-size:cover;height:50vh;background-position:center
 			}
 
 			.hero-title {
